@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         timer = findViewById(R.id.txttimer);
 
-
+        CheackInstanceState(savedInstanceState);
         runstropwatch();
 
     }
@@ -48,6 +49,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+    protected void CheackInstanceState(Bundle savedInstanceState){
+        if(savedInstanceState != null){
+            running = savedInstanceState.getBoolean("running");
+            sec = savedInstanceState.getInt("sec");
+        }
+    }
+
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("running", running);
+        outState.putInt("sec" , sec);
+    }
 
     public void ONClickStartButton(View view) {
         running = true;
