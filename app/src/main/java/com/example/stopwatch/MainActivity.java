@@ -1,6 +1,7 @@
 package com.example.stopwatch;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,5 +17,14 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+    }
+
+    public void ONClickRestartButton(View view) {
+    }
+
+    public void ONClickStopButton(View view) {
+    }
+
+    public void ONClickStartButton(View view) {
     }
 }
